@@ -11,44 +11,44 @@ import {
 export default function FAQ() {
   const faqs = [
     {
-      question: 'When and where is SOD 2025 taking place?',
-      answer: 'SOD 2025 is scheduled for March 6, 2025. The exact location will be a private residence in Accra, Ghana. The specific venue details will be shared with confirmed attendees closer to the event date.'
+      question: "When and where is SOD 2025 taking place?",
+      answer: "SOD 2025 is scheduled for March 6, 2025. The exact location will be a private residence in Accra, Ghana. The specific venue details will be shared with confirmed attendees closer to the event date."
     },
     {
-      question: 'How can I register for the event?',
-      answer: 'Registration is available through our website. Simply navigate to the Registration page, fill out the required information, and upload your proof of payment. Once your payment is verified, you'll receive a confirmation email with your event pass.'
+      question: "How can I register for the event?",
+      answer: "Registration is available through our website. Simply navigate to the Registration page, fill out the required information, and upload your proof of payment. Once your payment is verified, you'll receive a confirmation email with your event pass."
     },
     {
-      question: 'What is the cost to attend SOD 2025?',
-      answer: 'The event cost is yet to be confirmed. Please check back later for pricing information or contact us directly for updates.'
+      question: "What is the cost to attend SOD 2025?",
+      answer: "The event cost is yet to be confirmed. Please check back later for pricing information or contact us directly for updates."
     },
     {
-      question: 'Is SOD 2025 open to everyone?',
+      question: "Is SOD 2025 open to everyone?",
       answer: "SOD 2025 is exclusively for MSc Business Analytics students at the University of Ghana Business School. All attendees must pay to participate."
     },
     {
-      question: 'What should I wear to the event?',
-      answer: 'The dress code is casual and comfortable. Since there will be swimming activities, you may want to bring appropriate swimwear.'
+      question: "What should I wear to the event?",
+      answer: "The dress code is casual and comfortable. Since there will be swimming activities, you may want to bring appropriate swimwear."
     },
     {
-      question: 'What's included in my ticket?',
+      question: "What's included in my ticket?",
       answer: "Your ticket includes entry to the event, access to all activities (swimming, talks, karaoke, games, movie session, and video games), and more. Each ticket admits only one person."
     },
     {
-      question: 'Will food and drinks be provided?',
-      answer: 'Absolutely! More details about food and drinks will be communicated closer to the event date.'
+      question: "Will food and drinks be provided?",
+      answer: "Absolutely! More details about food and drinks will be communicated closer to the event date."
     },
     {
-      question: 'Can I get a refund if I can\'t attend?',
-      answer: 'Tickets are non-refundable but are transferable up to 2 days before the event. Please contact our team at info@sod2025.com to arrange a ticket transfer.'
+      question: "Can I get a refund if I can't attend?",
+      answer: "Tickets are non-refundable but are transferable up to 2 days before the event. Please contact our team at info@sod2025.com to arrange a ticket transfer."
     },
     {
-      question: 'Will transportation be provided?',
-      answer: 'Transportation is not included. However, we will provide detailed directions and parking information to all confirmed attendees.'
+      question: "Will transportation be provided?",
+      answer: "Transportation is not included. However, we will provide detailed directions and parking information to all confirmed attendees."
     },
     {
-      question: 'Who do I contact if I have more questions?',
-      answer: 'For any additional questions or concerns, please email us at info@sod2025.com, call +233 26 435 5165, or WhatsApp +233 55 348 0047. Our team is available to assist you Monday through Friday, 9 AM to 5 PM.'
+      question: "Who do I contact if I have more questions?",
+      answer: "For any additional questions or concerns, please email us at info@sod2025.com, call +233 26 435 5165, or WhatsApp +233 55 348 0047. Our team is available to assist you Monday through Friday, 9 AM to 5 PM."
     }
   ];
 
