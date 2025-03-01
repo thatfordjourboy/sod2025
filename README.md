@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔥 Steam-Off Daycation (SOD) 2025 Website
 
-## Getting Started
+A vibrant, high-end, youthful, and exotic digital experience for Ghana's most exclusive house party event!
 
-First, run the development server:
+## 🌟 Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Steam-Off Daycation 2025 is a premium, invite-only house party designed for MSc Business Analytics students to unwind, network, and celebrate post-exam freedom. The website serves as:
+
+- A high-energy informational hub with party visuals and motion effects
+- A seamless registration platform with an upload system for proof of payment
+- A secure organizer dashboard to verify attendees, approve registrations, and generate QR codes for event check-in
+
+## 💻 Tech Stack
+
+- **Frontend**: Next.js, TypeScript, Tailwind CSS, Framer Motion, ShadCN UI
+- **Backend**: (To be implemented) FastAPI/Django + MySQL
+- **Deployment**: Vercel (Frontend), Railway/Render/DigitalOcean (Backend)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/sod2025.git
+   cd sod2025
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## 📂 Project Structure
+
+```
+sod2025/
+├── src/
+│   ├── app/
+│   │   ├── faqs/
+│   │   ├── register/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── ui/
+│   │   ├── FAQ.tsx
+│   │   ├── Features.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Location.tsx
+│   │   ├── Navbar.tsx
+│   │   └── RegistrationForm.tsx
+│   └── lib/
+│       └── utils.ts
+├── public/
+│   └── (images)
+├── components.json
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design**: Fully responsive design that works on all devices
+- **Animated UI**: Smooth animations and transitions using Framer Motion
+- **Dark Mode**: Elegant dark theme with neon accents
+- **Form Validation**: Client-side form validation for registration
+- **File Upload**: Secure file upload for proof of payment
+- **Interactive Components**: Interactive UI components for better user experience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Configuration
 
-## Learn More
+The project uses the following configuration files:
 
-To learn more about Next.js, take a look at the following resources:
+- `next.config.ts`: Next.js configuration
+- `tailwind.config.ts`: Tailwind CSS configuration
+- `postcss.config.mjs`: PostCSS configuration
+- `tsconfig.json`: TypeScript configuration
+- `components.json`: ShadCN UI configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 To-Do
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Implement backend API with FastAPI or Django
+- [ ] Set up MySQL database
+- [ ] Create admin dashboard for organizers
+- [ ] Implement QR code generation for event check-in
+- [ ] Add email notification system
+- [ ] Set up CI/CD pipeline
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📞 Contact
+
+For any questions or inquiries, please contact:
+
+- Email: info@sod2025.com
+- Phone: +233 50 123 4567
