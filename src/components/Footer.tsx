@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 // Simple component for social icons
 const SocialIcon = ({ href, icon }: { href: string; icon: string }) => {
