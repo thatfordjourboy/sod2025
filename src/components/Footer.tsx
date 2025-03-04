@@ -86,6 +86,9 @@ export default function Footer() {
           <p className="text-gray-500">
             &copy; {currentYear} Steam-Off Daycation. All rights reserved.
           </p>
+          <p className="text-gray-500 mt-2">
+            <span className="text-primary">Created by Eleazer Quayson</span> with ❤️
+          </p>
         </div>
       </div>
     </footer>

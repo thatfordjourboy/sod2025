@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,6 +20,12 @@ export default function RegistrationForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+
+  // Fix hydration mismatch by ensuring client-side rendering
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -58,20 +64,49 @@ export default function RegistrationForm() {
     
     setIsSubmitting(true);
     
-    // Simulate file upload progress
-    const interval = setInterval(() => {
-      setUploadProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 10;
+    try {
+      // Step 1: Register the user
+      const fullName = `${formData.firstName} ${formData.lastName}`;
+      const registerResponse = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: fullName,
+          email: formData.email,
+          phone_number: formData.phone,
+          cohort: formData.cohort
+        }),
       });
-    }, 300);
-    
-    // Simulate API call
-    setTimeout(() => {
-      clearInterval(interval);
+      
+      const registerData = await registerResponse.json();
+      
+      if (!registerResponse.ok) {
+        throw new Error(registerData.error || 'Registration failed');
+      }
+      
+      const registrationId = registerData.registration_id;
+      
+      // Step 2: Upload receipt
+      setUploadProgress(30); // Start progress
+      
+      const formDataObj = new FormData();
+      formDataObj.append('receipt', formData.file);
+      
+      const uploadResponse = await fetch(`http://localhost:5000/api/upload-receipt/${registrationId}`, {
+        method: 'POST',
+        body: formDataObj,
+      });
+      
+      setUploadProgress(90);
+      
+      const uploadData = await uploadResponse.json();
+      
+      if (!uploadResponse.ok) {
+        throw new Error(uploadData.error || 'Receipt upload failed');
+      }
+      
       setUploadProgress(100);
       
       // Reset form
@@ -84,12 +119,38 @@ export default function RegistrationForm() {
         file: null,
       });
       
+      toast.success("Registration submitted successfully! We'll verify your payment and send your event pass.");
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast.error(error instanceof Error ? error.message : 'Registration failed. Please try again.');
+    } finally {
       setIsSubmitting(false);
       setUploadProgress(0);
-      
-      toast.success("Registration submitted successfully! We'll verify your payment and send your event pass.");
-    }, 3000);
+    }
   };
+
+  // If not client-side yet, render a simplified version to avoid hydration mismatch
+  if (!isClient) {
+    return (
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <Card className="bg-card/50 backdrop-blur-sm border border-gray-800">
+              <CardHeader>
+                <CardTitle className="text-white">Registration Form</CardTitle>
+                <CardDescription>Loading registration form...</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-96 flex items-center justify-center">
+                  <div className="animate-pulse">Loading...</div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-black">
@@ -264,6 +325,9 @@ export default function RegistrationForm() {
                 <a href="mailto:info@sod2025.com" className="text-primary hover:underline">
                   info@sod2025.com
                 </a>
+              </p>
+              <p className="text-gray-500 mt-2">
+                <span className="text-primary">Created by Eleazer Quayson</span> with ❤️
               </p>
             </CardFooter>
           </Card>
