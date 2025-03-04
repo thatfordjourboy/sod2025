@@ -36,11 +36,11 @@ export default function FAQ() {
     },
     {
       question: "Will food and drinks be provided?",
-      answer: "Details about food and drinks will be communicated closer to the event date."
+      answer: "Absolutely! More details about food and drinks will be communicated closer to the event date."
     },
     {
       question: "Can I get a refund if I can't attend?",
-      answer: "Tickets are non-refundable but are transferable up to 7 days before the event. Please contact our team at info@sod2025.com to arrange a ticket transfer."
+      answer: "Tickets are non-refundable but are transferable up to 2 days before the event. Please contact our team at info@sod2025.com to arrange a ticket transfer."
     },
     {
       question: "Will transportation be provided?",
