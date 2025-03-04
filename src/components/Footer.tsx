@@ -75,7 +75,7 @@ export default function Footer() {
 
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <p className="text-gray-400 mb-2">Email: info@sod2025.com</p>
+            <p className="text-gray-400 mb-2">Email: steamoffdaycation@gmail.com</p>
             <p className="text-gray-400 mb-2">Phone: +233 26 435 5165</p>
             <p className="text-gray-400 mb-2">WhatsApp: +233 55 348 0047</p>
             <p className="text-gray-400">Accra, Ghana</p>
